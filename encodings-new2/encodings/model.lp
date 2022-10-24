@@ -1,3 +1,3 @@
-%model(end,"Release A").
+model(end,"Release A").
 
 
