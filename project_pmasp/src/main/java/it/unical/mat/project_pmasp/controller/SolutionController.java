@@ -101,7 +101,7 @@ public class SolutionController {
 				TraceAcceptedProperty p = table.getSelectionModel().getSelectedItem();
 				SceneHandler.getInstance().setCurrentTraceId(p.getTraceNumberProperty().get());
 				LogHandler.getInstance().loadTraces();
-				SceneHandler.getInstance().goToTrace((Stage) table.getScene().getWindow());
+				SceneHandler.getInstance().goToTrace();
 			}
     }
     

@@ -97,7 +97,7 @@ holds(constraint(chainsuccession,X,Y),TID) :- X != Y, holds(constraint(chainresp
 
 % Not Chain Succession
 aux_notchainsuccession_vio_witness(TID,X,Y) :- trace(TID,T,X), trace(TID,T+1,Y), sc(constraint(notchainsuccession,X,Y)).
-holds(constraint(notchainsuccession,X,Y),TID) :- X != Y, activity(X), activity(Y), trace(TID), not aux_notchainsuccession_vio_witness(TID,X,Y), sc(constraint(notsuccession,X,Y)).
+holds(constraint(notchainsuccession,X,Y),TID) :- X != Y, activity(X), activity(Y), trace(TID), not aux_notchainsuccession_vio_witness(TID,X,Y), sc(constraint(notchainsuccession,X,Y)).
 
 % Not Succession
 aux_succession_vio_witness(TID,X,Y) :- trace(TID,T,X), trace(TID,T2,Y), T < T2, sc(constraint(notsuccession,X,Y)).

@@ -61,11 +61,11 @@ public class SceneHandler {
 		setAndShow(stage, scene, "Solution", true);
 	}
 	
-	public void goToTrace(Stage solutionStage) throws Exception {
+	public void goToTrace() throws Exception {
 		Scene scene = loadScene("Trace.fxml", 640, 440);
 		Stage stage = new Stage();
 		stage.initModality(Modality.WINDOW_MODAL);
-		stage.initOwner(solutionStage);
+		stage.initOwner(modelStage);
 		setAndShow(stage, scene, "Trace", false);
 	}
 	

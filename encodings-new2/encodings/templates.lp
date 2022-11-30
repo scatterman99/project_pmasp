@@ -78,7 +78,7 @@ holds(constraint(chainprecedence,X,Y),TID) :- X != Y, activity(X), activity(Y), 
 % Co-Existence
 sc(constraint(respondedexistence,X,Y)) :- sc(constraint(coexistence,X,Y)).
 sc(constraint(respondedexistence,Y,X)) :- sc(constraint(coexistence,X,Y)).
-holds(constraint(coexistence,X,Y),TID) :- X < Y, holds(constraint(respondedexistence,X,Y),TID), holds(constraint(respondedexistence,Y,X),TID), sc(constraint(coexistence,Y,X)).
+holds(constraint(coexistence,X,Y),TID) :- X != Y, holds(constraint(respondedexistence,X,Y),TID), holds(constraint(respondedexistence,Y,X),TID).
 
 % Succession
 sc(constraint(response,X,Y)) :- sc(constraint(succession,X,Y)).
@@ -97,10 +97,10 @@ holds(constraint(chainsuccession,X,Y),TID) :- X != Y, holds(constraint(chainresp
 
 % Not Chain Succession
 aux_notchainsuccession_vio_witness(TID,X,Y) :- trace(TID,T,X), trace(TID,T+1,Y), sc(constraint(notchainsuccession,X,Y)).
-holds(constraint(notchainsuccession,X,Y),TID) :- X != Y, activity(X), activity(Y), trace(TID), not aux_notchainsuccession_vio_witness(TID,X,Y), sc(constraint(notsuccession,X,Y)).
+holds(constraint(notchainsuccession,X,Y),TID) :- X != Y, activity(X), activity(Y), trace(TID), not aux_notchainsuccession_vio_witness(TID,X,Y), sc(constraint(notchainsuccession,X,Y)).
 
 % Not Succession
-aux_succession_vio_witness(TID,X,Y) :- trace(TID,T,X), trace(TID,T2,Y), T < T2, sc(constraint(notchainsuccession,X,Y)).
+aux_succession_vio_witness(TID,X,Y) :- trace(TID,T,X), trace(TID,T2,Y), T < T2, sc(constraint(notsuccession,X,Y)).
 holds(constraint(notsuccession,X,Y),TID) :- X != Y, activity(X), activity(Y), trace(TID), not aux_succession_vio_witness(TID,X,Y), sc(constraint(notsuccession,X,Y)).
 
 % Not Coexistence
