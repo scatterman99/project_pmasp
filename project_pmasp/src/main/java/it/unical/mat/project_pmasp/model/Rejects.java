@@ -14,9 +14,9 @@ public class Rejects {
 		super();
 	}
 
-	public Rejects(int trackId) {
+	public Rejects(int traceId) {
 		super();
-		this.traceId = trackId;
+		this.traceId = traceId;
 	}
 
 	public int getTraceId() {

@@ -55,12 +55,11 @@ public class LogHandler {
 				throw new Exception();
 			}
 		} catch (IOException e) {
-			// messaggio di errore
 			e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
-			System.out.println("comando no");
+			e.printStackTrace();
 		}
 
 	}

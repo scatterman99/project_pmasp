@@ -58,8 +58,6 @@ public class Solver {
 		handler.addProgram(ip);
 
 		Output o = handler.startSync();
-
-		System.out.println(o.getOutput());
 		
 		AnswerSets answersets = (AnswerSets) o;
 		for (AnswerSet a : answersets.getAnswersets()) {

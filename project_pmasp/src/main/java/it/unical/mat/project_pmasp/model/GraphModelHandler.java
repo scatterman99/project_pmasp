@@ -27,7 +27,7 @@ public class GraphModelHandler {
 	public void addActivityNode(String activity) {
 		for (ActivityNode a : activityNodes)
 			if (a.getActivity().getName().equals(activity))
-				return; // inserire messaggio di errore
+				return;
 		activityNodes.add(new ActivityNode(new Activity(activity)));
 	}
 
@@ -106,7 +106,6 @@ public class GraphModelHandler {
 				model.append(e.getDestination().getName());
 				model.append("\").\n");
 			}
-		System.out.println(model.toString());
 		return model.toString();
 	}
 
