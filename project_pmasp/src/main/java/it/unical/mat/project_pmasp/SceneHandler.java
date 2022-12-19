@@ -72,8 +72,11 @@ public class SceneHandler {
 	public void goToLog() throws Exception {
 		if(logStage == null) {
 			Scene scene = loadScene("LogVisualization.fxml", 640, 440);
-			System.out.println("ok");
 			logStage = new Stage();
+			setAndShow(logStage, scene, "View Log", false);
+		}
+		else {
+			Scene scene = loadScene("LogVisualization.fxml", 640, 440);
 			setAndShow(logStage, scene, "View Log", false);
 		}
 	}
