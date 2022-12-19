@@ -102,6 +102,14 @@ public class GraphView {
 					ac.setColor(Color.GREEN);
 				else
 					ac.setColor(Color.YELLOW);
+		if(canChangeEdgeLayout)
+			for (ActivityCell ac : activityCells)
+				if (ac.getActivityName().getText().equals(selectedActivity2))
+					ac.setColor(Color.LIGHTBLUE);
+				else if (ac.getActivityName().getText().equals(selectedActivity))
+					ac.setColor(Color.BLUE);
+				else
+					ac.setColor(Color.YELLOW);
 	}
 
 	private void addBinaryConstraints(ActivityCell ac, ActivityCell ac2, Model model) {

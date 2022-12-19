@@ -1,8 +1,5 @@
 package it.unical.mat.project_pmasp.controller;
 
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
 import it.unical.mat.project_pmasp.SceneHandler;
 import it.unical.mat.project_pmasp.model.LogHandler;
 import it.unical.mat.project_pmasp.model.Solver;
